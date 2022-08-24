@@ -74,8 +74,8 @@ const Mint = () => {
         const blob = new Blob([JSON.stringify(metaData)], {
           type: "application/json",
         });
-
         const files = new File([blob], "ipfs.json");
+
         const resultsSaveMetaData = await uploadFileToAws(files);
         console.log("---resultsSaveMetaData-->", resultsSaveMetaData);
         responseData = await _transction(
