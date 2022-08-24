@@ -10,23 +10,14 @@ import Web3 from "web3";
 import TextareaAutosize from "@mui/material/TextareaAutosize";
 import Switch from "@mui/material/Switch";
 import DeleteOutlineIcon from "@mui/icons-material/Delete";
-
 import { pink } from "@mui/material/colors";
 import TransctionModal from "../components/shared/TransctionModal";
 import HeaderWrapper from "../components/shared/BackgroundUI";
 import { getSymbol } from "../utils/currencySymbol";
 import "../styles/background.css";
-
-// import { getFilesFromPath } from "web3.storage";
-import { Web3Storage } from "web3.storage/dist/bundle.esm.min.js";
 import { uploadFileToAws } from "../utils/uploadFileToAws";
 
 const web3 = new Web3(window.ethereum);
-
-const client = new Web3Storage({
-  token:
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDEzMkRhNjE2N2U0OTY2Y2M2ODBlMjNlNzdjMmM5NjI2YWZFQjkyNzMiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2NjAxOTIxNjI3MDEsIm5hbWUiOiJ0ZXN0In0.nrWyG-RPCty28GQLPOfjCacYoOoURarCyo6nh3t0QCY",
-});
 
 // const VendorSchema = Yup.object().shape({
 //   name: Yup.string().required("Name is required"),
@@ -34,7 +25,6 @@ const client = new Web3Storage({
 //   price: Yup.string().required("Price is required"),
 //   royelty: Yup.string().required("Royelty amount is required"),
 // });
-// WCVDU52748WW4F7EKDEDB89HKH41BIA4N2
 
 const Mint = () => {
   const [start, setStart] = useState(false);
@@ -69,46 +59,36 @@ const Mint = () => {
       },
     ];
     if (file) {
-      // const fileInput = document.querySelector('input[type="file"]');
-      // const results = await client.put(fileInput.files, {});
       const results = await uploadFileToAws(file);
       console.log("---results-->", results);
+      if (results) {
+        const metaData = {
+          name: title,
+          author: authorname,
+          category: category,
+          image: results,
+          description: description,
+          attributes: attributes.concat(dummyAttrribute),
+        };
 
-      // ------------------------------------------AWS s3
+        const blob = new Blob([JSON.stringify(metaData)], {
+          type: "application/json",
+        });
 
-      console.log("---file->", file.name);
-
-      const metaData = {
-        name: title,
-        author: authorname,
-        category: category,
-        image: results,
-        description: description,
-        attributes: attributes.concat(dummyAttrribute),
-      };
-
-      const blob = new Blob([JSON.stringify(metaData)], {
-        type: "application/json",
-      });
-
-      const files = new File([blob], "ipfs.json");
-
-      // const resultsSaveMetaData = await client.put(files, {});
-      // console.log("---metadta-->", resultsSaveMetaData);
-
-      const resultsSaveMetaData = await uploadFileToAws(files);
-
-      responseData = await _transction(
-        "mintNFT",
-        resultsSaveMetaData,
-        web3.utils.toWei(price.toString(), "ether"),
-        royelty,
-        category
-      );
+        const files = new File([blob], "ipfs.json");
+        const resultsSaveMetaData = await uploadFileToAws(files);
+        console.log("---resultsSaveMetaData-->", resultsSaveMetaData);
+        responseData = await _transction(
+          "mintNFT",
+          resultsSaveMetaData,
+          web3.utils.toWei(price.toString(), "ether"),
+          royelty,
+          category
+        );
+      }
+      setResponse(responseData);
+      console.log("responseData", responseData);
     }
-    setResponse(responseData);
-
-    console.log("responseData", responseData);
   };
 
   useEffect(() => {

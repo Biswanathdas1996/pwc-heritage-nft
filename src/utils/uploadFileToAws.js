@@ -15,7 +15,6 @@ const myBucket = new AWS.S3({
 });
 
 export async function uploadFileToAws(file) {
-  console.log("---------file------>", file);
   const fileName = `${uuidv4()}.${file.name.split(".").pop()}`;
   const params = {
     ACL: "public-read",
@@ -24,14 +23,17 @@ export async function uploadFileToAws(file) {
     Key: fileName,
   };
 
-  await myBucket
-    .putObject(params)
-    .on("httpUploadProgress", (evt) => {
-      // setProgress(Math.round((evt.loaded / evt.total) * 100))
-    })
-    .send((err) => {
-      if (err) console.log(err);
-    });
-
-  return `https://pwc-nft-storage.s3.us-east-2.amazonaws.com/${fileName}`;
+  return new Promise(function (myResolve, myReject) {
+    myBucket
+      .putObject(params)
+      .on("httpUploadProgress", (evt) => {
+        // setProgress(Math.round((evt.loaded / evt.total) * 100))
+      })
+      .send((err) => {
+        if (err) console.log(err);
+        return myResolve(
+          `https://${S3_BUCKET}.s3.${REGION}.amazonaws.com/${fileName}`
+        );
+      });
+  });
 }

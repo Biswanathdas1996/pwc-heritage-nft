@@ -14,7 +14,6 @@ import TopSelling from "./Pages/TopSelling";
 import CategoryWiseList from "./Pages/CategoryWiseList";
 import Profile from "./Pages/Profile";
 import HowITworks from "./Pages/HowITworks";
-import UploadTOs3 from "./Pages/UploadTOs3";
 
 class Routing extends React.Component {
   render() {
@@ -46,7 +45,6 @@ class Routing extends React.Component {
 
         <Route exact path="/profile" element={<Profile />} />
         <Route exact path="/HowItWorks" element={<HowITworks />} />
-        <Route exact path="/upload" element={<UploadTOs3 />} />
 
         <Route
           render={function () {
