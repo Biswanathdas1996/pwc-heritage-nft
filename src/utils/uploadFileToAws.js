@@ -5,8 +5,8 @@ const S3_BUCKET = "pwc-nft-storage";
 const REGION = "us-east-2";
 
 AWS.config.update({
-  accessKeyId: "AKIAIWYZ6FLNO5I3HLZQ",
-  secretAccessKey: "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",
+  accessKeyId: "AKIAYHIOXQAZULWF5XEF",
+  secretAccessKey: "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",
 });
 
 const myBucket = new AWS.S3({
