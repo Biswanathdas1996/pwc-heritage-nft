@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 import { Formik, Form, Field, FieldArray } from "formik";
 // import * as Yup from "yup";
@@ -52,7 +53,7 @@ const Feedback = () => {
   };
   let history = useNavigate();
 
-  const saveData = async ({}) => {};
+  const saveData = async () => {};
 
   const modalClose = () => {
     setStart(false);
