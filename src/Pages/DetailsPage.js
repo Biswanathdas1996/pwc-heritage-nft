@@ -9,7 +9,6 @@ import RecentActivity from "../components/shared/RecentActivity";
 import Loader from "../components/shared/Loader";
 import { buyNft } from "../functions/buyNft";
 import TransctionModal from "../components/shared/TransctionModal";
-import FeedbackForm from "../components/shared/FeedbackForm";
 
 import {
   getContractAddress,
@@ -112,9 +111,6 @@ export default function DetailsPage({ match }) {
               <Loader count="2" xs={12} sm={12} md={6} lg={6} />
             </Grid>
           )}
-
-          <FeedbackForm />
-
           <RecentActivity />
         </main>
       </Container>
