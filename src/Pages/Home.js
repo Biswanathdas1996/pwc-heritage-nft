@@ -4,8 +4,8 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-import { Toolbar, ButtonGroup } from "@mui/material";
-import FilterAltOutlinedIcon from "@mui/icons-material/FilterAltOutlined";
+import { Toolbar } from "@mui/material";
+
 import NftCard from "../components/shared/NFT-Card";
 import RecentActivity from "../components/shared/RecentActivity";
 import TopBanner from "../components/Header/TopBanner";
@@ -15,6 +15,9 @@ import Loader from "../components/shared/Loader";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import BlogList from "../components/shared/BlogList";
 import CategoryList from "../components/shared/CategoryList";
+import About from "../components/Home/About";
+import SpecialItems from "../components/shared/SpecialItems";
+import VideoCard from "../components/shared/VideoCard";
 
 export default function HomePage() {
   const [tokens, setToken] = useState([]);
@@ -43,6 +46,10 @@ export default function HomePage() {
             pb: 2,
           }}
         >
+          <About />
+          <SpecialItems />
+          <VideoCard />
+
           <CategoryList />
 
           {/* <Typography
@@ -66,21 +73,6 @@ export default function HomePage() {
             Top Selling
           </Typography>
           <Box sx={{ flexGrow: 1 }} />
-          <ButtonGroup size="small">
-            <Button>
-              <FilterAltOutlinedIcon />
-            </Button>
-            <Button
-              sx={{
-                textTransform: "none",
-                color: "black",
-                fontWeight: 500,
-                pt: "5px",
-              }}
-            >
-              Filter & Sort
-            </Button>
-          </ButtonGroup>
         </Toolbar>
 
         <Grid container spacing={4}>

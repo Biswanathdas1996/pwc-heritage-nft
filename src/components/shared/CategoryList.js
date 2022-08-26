@@ -4,12 +4,12 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
-import imgx1 from "../../assets/images/imgx1.png";
-import imgx2 from "../../assets/images/imgx2.png";
-import imgx3 from "../../assets/images/imgx3.png";
-import imgx4 from "../../assets/images/imgx4.png";
-import imgx5 from "../../assets/images/imgx5.png";
-import imgx6 from "../../assets/images/imgx6.png";
+import imgx1 from "../../assets/images/images.jpg";
+import imgx2 from "../../assets/images/images (1).jpg";
+import imgx3 from "../../assets/images/heritage-02-00007-g001-550.png";
+// import imgx4 from "../../assets/images/imgx4.png";
+// import imgx5 from "../../assets/images/imgx5.png";
+// import imgx6 from "../../assets/images/imgx6.png";
 import { useNavigate } from "react-router-dom";
 
 export default function RecipeReviewCard() {
@@ -60,9 +60,9 @@ export default function RecipeReviewCard() {
           {cardUI(`Art`, imgx1, `/category/art`)}
         </Grid>
         <Grid item xs={4}>
-          {cardUI(`Music`, imgx2, `/category/music`)}
+          {cardUI(`Instrument`, imgx2, `/category/music`)}
         </Grid>
-        <Grid item xs={4}>
+        {/* <Grid item xs={4}>
           {cardUI(`Sports`, imgx6, `/category/sports`)}
         </Grid>
         <Grid item xs={4}>
@@ -70,7 +70,7 @@ export default function RecipeReviewCard() {
         </Grid>
         <Grid item xs={4}>
           {cardUI(`Images`, imgx5, `/category/music`)}
-        </Grid>
+        </Grid> */}
         <Grid item xs={4}>
           {cardUI(`Collectables`, imgx3, `/category/sports`)}
         </Grid>
