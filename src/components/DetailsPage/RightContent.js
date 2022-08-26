@@ -21,6 +21,8 @@ import UpdatePrice from "./UpdatePrice";
 import PrivetContent from "./PrivetContent";
 import { getIcon } from "../../utils/currencyIcon";
 import { getSymbol } from "../../utils/currencySymbol";
+import { findMeanRatingValue } from "../../utils/getAvarageRating";
+import Rating from "../shared/Rating";
 
 const countData = ["05", "08", "35", "12"];
 
@@ -40,9 +42,23 @@ const RightContent = ({
   };
 
   const { name, attributes } = nftData;
+  const rating = findMeanRatingValue(nftData);
   return (
     <Container>
       <Typography sx={{ fontSize: 30, fontWeight: "bold" }}>{name}</Typography>
+      {rating > 0 && (
+        <div style={{ display: "flex", marginTop: 10 }}>
+          <Rating rating={Math.round(rating)} />
+          <Button
+            variant="contained"
+            size="small"
+            color="success"
+            style={{ marginLeft: 10 }}
+          >
+            <b>{Math.round(rating).toFixed(1)}</b>
+          </Button>
+        </div>
+      )}
       <Stack direction="row" spacing={12} marginTop="20px">
         <Stack direction="row">
           <ManageAccountsIcon alt="Creator" sx={{ width: 30, height: 30 }} />

@@ -32,8 +32,6 @@ const useStyles = makeStyles({
   },
 });
 
-
-
 export default function LeftConrent({ nftData, tokenId, ContractAddress }) {
   const { description, image } = nftData;
   const classes = useStyles();
@@ -58,7 +56,6 @@ export default function LeftConrent({ nftData, tokenId, ContractAddress }) {
           </div>
         }
       ></CardHeader>
-
       {allowableVideoFormat.includes(get_url_extension(image)) ?
         (
           <video width="500" controls>
@@ -77,7 +74,6 @@ export default function LeftConrent({ nftData, tokenId, ContractAddress }) {
             sx={{ backgroundSize: "cover" }}
           />
         )}
-
       <CardContent sx={{ pl: 3 }}>
         <Typography
           variant="subtitle1"

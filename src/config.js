@@ -43,3 +43,5 @@ export const getTransctionListAPI = (account) => {
   }
   return URI;
 };
+
+export const awsS3BaseUrl = "http://52.152.235.210:8210";
