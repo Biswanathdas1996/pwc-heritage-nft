@@ -15,7 +15,11 @@ import TransctionModal from "../components/shared/TransctionModal";
 import HeaderWrapper from "../components/shared/BackgroundUI";
 import { getSymbol } from "../utils/currencySymbol";
 import "../styles/background.css";
-import { uploadFileToAws } from "../utils/uploadFileToAws";
+// import { uploadFileToAws } from "../utils/uploadFileToAws";
+import {
+  uploadFileToIpfs,
+  createAnduploadFileToIpfs,
+} from "../utils/uploadFileToIpfs";
 
 const web3 = new Web3(window.ethereum);
 
@@ -59,7 +63,9 @@ const Mint = () => {
       },
     ];
     if (file) {
-      const results = await uploadFileToAws(file);
+      const fileContent = document.querySelector('input[id="content"]');
+      const results = await uploadFileToIpfs(fileContent.files);
+      // const results = await uploadFileToAws(file);
       console.log("---results-->", results);
       if (results) {
         const metaData = {
@@ -71,12 +77,7 @@ const Mint = () => {
           attributes: attributes.concat(dummyAttrribute),
         };
 
-        const blob = new Blob([JSON.stringify(metaData)], {
-          type: "application/json",
-        });
-        const files = new File([blob], "ipfs.json");
-
-        const resultsSaveMetaData = await uploadFileToAws(files);
+        const resultsSaveMetaData = await createAnduploadFileToIpfs(metaData);
         console.log("---resultsSaveMetaData-->", resultsSaveMetaData);
         responseData = await _transction(
           "mintNFT",
@@ -262,6 +263,7 @@ const Mint = () => {
                                       className={`form-control text-muted`}
                                       type="file"
                                       onChange={onFileChange}
+                                      id="content"
                                     />
 
                                     {selectedFile && (

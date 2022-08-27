@@ -15,7 +15,7 @@ import Loader from "../components/shared/Loader";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import BlogList from "../components/shared/BlogList";
 import CategoryList from "../components/shared/CategoryList";
-import About from "../components/Home/About";
+// import About from "../components/Home/About";
 import SpecialItems from "../components/shared/SpecialItems";
 import VideoCard from "../components/shared/VideoCard";
 
@@ -46,32 +46,13 @@ export default function HomePage() {
     <>
       <TopBanner></TopBanner>
       <Container style={{ marginTop: 40 }}>
-        <About />
+        {/* <About /> */}
+        <CategoryList />
       </Container>
       <Container maxWidth>
         <SpecialItems />
       </Container>
       <Container>
-        <Box
-          sx={{
-            pt: 4,
-            pb: 2,
-          }}
-        >
-          <VideoCard />
-
-          <CategoryList />
-
-          {/* <Typography
-            component="h1"
-            variant="h7"
-            align="left"
-            color="text.primary"
-            fontSize="40px"
-          >
-            Buy/Sell Digital Art on our Art Gallery
-          </Typography> */}
-        </Box>
         <Toolbar style={{ padding: 0 }}>
           <Typography
             component="h3"
@@ -120,6 +101,7 @@ export default function HomePage() {
             </Button>
           )}
         </center>
+        <VideoCard />
         <BlogList />
 
         <RecentActivity />

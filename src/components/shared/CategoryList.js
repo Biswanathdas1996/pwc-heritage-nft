@@ -5,12 +5,35 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import imgx1 from "../../assets/images/images.jpg";
-import imgx2 from "../../assets/images/images (1).jpg";
-import imgx3 from "../../assets/images/heritage-02-00007-g001-550.png";
-// import imgx4 from "../../assets/images/imgx4.png";
-// import imgx5 from "../../assets/images/imgx5.png";
-// import imgx6 from "../../assets/images/imgx6.png";
+import imgx2 from "../../assets/images/typewriter.jpeg";
+// import imgx3 from "../../assets/images/heritage-02-00007-g001-550.png";
+import imgx4 from "../../assets/images/imgx4.png";
+import imgx5 from "../../assets/images/w9.jpeg";
+import imgx6 from "../../assets/images/item3.png";
 import { useNavigate } from "react-router-dom";
+
+const category = [
+  {
+    title: "Art",
+    img: imgx1,
+    link: "/category/art",
+  },
+  {
+    title: "Instrument",
+    img: imgx2,
+    link: "/category/music",
+  },
+  {
+    title: "Sports",
+    img: imgx6,
+    link: "/category/sports",
+  },
+  {
+    title: "Collectables",
+    img: imgx5,
+    link: "/category/art",
+  },
+];
 
 export default function RecipeReviewCard() {
   let history = useNavigate();
@@ -56,24 +79,11 @@ export default function RecipeReviewCard() {
           <br />
         </Grid>
 
-        <Grid item xs={12} sm={12} md={4} lg={4}>
-          {cardUI(`Art`, imgx1, `/category/art`)}
-        </Grid>
-        <Grid item xs={12} sm={12} md={4} lg={4}>
-          {cardUI(`Instrument`, imgx2, `/category/music`)}
-        </Grid>
-        {/* <Grid item  xs={12}  sm={12} md={4} lg={4}>
-          {cardUI(`Sports`, imgx6, `/category/sports`)}
-        </Grid>
-        <Grid item  xs={12}  sm={12} md={4} lg={4}>
-          {cardUI(`Virtual World`, imgx4, `/category/art`)}
-        </Grid>
-        <Grid item  xs={12}  sm={12} md={4} lg={4}>
-          {cardUI(`Images`, imgx5, `/category/music`)}
-        </Grid> */}
-        <Grid item xs={12} sm={12} md={4} lg={4}>
-          {cardUI(`Collectables`, imgx3, `/category/sports`)}
-        </Grid>
+        {category.map((data, index) => (
+          <Grid item xs={12} sm={12} md={3} lg={3} key={index}>
+            {cardUI(data.title, data.img, data.link)}
+          </Grid>
+        ))}
       </Grid>
       <div style={{ marginTop: 50 }}></div>
     </>

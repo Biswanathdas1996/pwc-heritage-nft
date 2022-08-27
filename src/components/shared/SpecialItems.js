@@ -75,11 +75,11 @@ const ImageBackdrop = styled("span")(({ theme }) => ({
 }));
 
 export default function RecipeReviewCard() {
-  const cardUI = (img, height) => {
+  const cardUI = (img, tokenId) => {
     return (
       <Box
         sx={{ display: "flex", flexWrap: "wrap", width: "100%" }}
-        onClick={(e) => window.open(img)}
+        onClick={(e) => window.open(`/details/${tokenId}`)}
       >
         <ImageButton
           focusRipple
@@ -112,44 +112,44 @@ export default function RecipeReviewCard() {
         </Grid>
 
         <Grid item xs={2} sm={2} md={2} lg={2}>
-          {cardUI(Blog1)}
+          {cardUI(Blog1, 1)}
         </Grid>
         <Grid item xs={4} sm={4} md={4} lg={4}>
-          {cardUI(Blog2)}
+          {cardUI(Blog2, 2)}
         </Grid>
         <Grid item xs={2} sm={2} md={2} lg={2}>
-          {cardUI(Blog3)}
+          {cardUI(Blog3, 3)}
         </Grid>
         <Grid item xs={4} sm={4} md={4} lg={4}>
-          {cardUI(Blog4)}
+          {cardUI(Blog4, 4)}
         </Grid>
         <Grid item xs={4} sm={4} md={4} lg={4}>
-          {cardUI(Blog5)}
+          {cardUI(Blog5, 5)}
         </Grid>
         <Grid item xs={2} sm={2} md={2} lg={2}>
-          {cardUI(Blog6)}
+          {cardUI(Blog6, 3)}
         </Grid>
         <Grid item xs={4} sm={4} md={4} lg={4}>
-          {cardUI(Blog7)}
+          {cardUI(Blog7, 3)}
         </Grid>
         <Grid item xs={2} sm={2} md={2} lg={2}>
-          {cardUI(Blog8)}
+          {cardUI(Blog8, 3)}
         </Grid>
         <Grid item xs={2} sm={2} md={2} lg={2}>
-          {cardUI(Blog9)}
+          {cardUI(Blog9, 3)}
         </Grid>
         <Grid item xs={2} sm={2} md={2} lg={2}>
-          {cardUI(Blog10)}
+          {cardUI(Blog10, 3)}
         </Grid>
 
         <Grid item xs={4} sm={4} md={4} lg={4}>
-          {cardUI(Blog11)}
+          {cardUI(Blog11, 1)}
         </Grid>
         <Grid item xs={2} sm={2} md={2} lg={2}>
-          {cardUI(Blog12)}
+          {cardUI(Blog12, 2)}
         </Grid>
         <Grid item xs={2} sm={2} md={2} lg={2}>
-          {cardUI(Blog13)}
+          {cardUI(Blog13, 3)}
         </Grid>
       </Grid>
     </>

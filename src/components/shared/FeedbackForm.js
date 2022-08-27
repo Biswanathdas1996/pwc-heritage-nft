@@ -15,7 +15,8 @@ import { _transction } from "../../CONTRACT-ABI/connect";
 import Rating from "@mui/material/Rating";
 import Box from "@mui/material/Box";
 import StarIcon from "@mui/icons-material/Star";
-import { uploadFileToAws } from "../../utils/uploadFileToAws";
+// import { uploadFileToAws } from "../../utils/uploadFileToAws";
+import { createAnduploadFileToIpfs } from "../../utils/uploadFileToIpfs";
 import ListAllFeedback from "./ListAllFeedback";
 
 const labels = {
@@ -71,13 +72,7 @@ const Feedback = ({ nftData, tokenId }) => {
     } else {
       nftData.feedback = [feedback];
     }
-    console.log("nftData--->", nftData);
-    const blob = new Blob([JSON.stringify(nftData)], {
-      type: "application/json",
-    });
-    const files = new File([blob], "ipfs.json");
-
-    const resultsSaveMetaData = await uploadFileToAws(files);
+    const resultsSaveMetaData = await createAnduploadFileToIpfs(nftData);
     console.log("---resultsSaveMetaData-->", resultsSaveMetaData);
     const responseData = await _transction(
       "updateNftUri",
