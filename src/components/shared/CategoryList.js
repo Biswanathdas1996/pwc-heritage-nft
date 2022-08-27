@@ -7,7 +7,7 @@ import Grid from "@mui/material/Grid";
 import imgx1 from "../../assets/images/images.jpg";
 import imgx2 from "../../assets/images/typewriter.jpeg";
 // import imgx3 from "../../assets/images/heritage-02-00007-g001-550.png";
-import imgx4 from "../../assets/images/imgx4.png";
+// import imgx4 from "../../assets/images/imgx4.png";
 import imgx5 from "../../assets/images/w9.jpeg";
 import imgx6 from "../../assets/images/item3.png";
 import { useNavigate } from "react-router-dom";
