@@ -6,19 +6,19 @@ import ButtonBase from "@mui/material/ButtonBase";
 import Typography from "@mui/material/Typography";
 
 import Grid from "@mui/material/Grid";
-import Blog1 from "../../assets/images/w1.jpeg";
+import Blog1 from "../../assets/images/w1-min.jpeg";
 import Blog2 from "../../assets/images/item3.png";
-import Blog3 from "../../assets/images/w3.jpeg";
-import Blog4 from "../../assets/images/w16.jpeg";
-import Blog5 from "../../assets/images/w4.jpeg";
-import Blog6 from "../../assets/images/w5.jpeg";
-import Blog7 from "../../assets/images/w6.jpeg";
-import Blog8 from "../../assets/images/w7.jpeg";
-import Blog9 from "../../assets/images/w8.jpeg";
-import Blog10 from "../../assets/images/w15.jpeg";
-import Blog11 from "../../assets/images/w10.jpeg";
-import Blog12 from "../../assets/images/w11.jpeg";
-import Blog13 from "../../assets/images/w12.jpeg";
+import Blog3 from "../../assets/images/w3-min.jpeg";
+import Blog4 from "../../assets/images/w16-min.jpeg";
+import Blog5 from "../../assets/images/w4-min.jpeg";
+import Blog6 from "../../assets/images/w5-min.jpeg";
+import Blog7 from "../../assets/images/w6-min.jpeg";
+import Blog8 from "../../assets/images/w7-min.jpeg";
+import Blog9 from "../../assets/images/w8-min.jpeg";
+import Blog10 from "../../assets/images/w15-min.jpeg";
+import Blog11 from "../../assets/images/w10-min.jpeg";
+import Blog12 from "../../assets/images/w11-min.jpeg";
+import Blog13 from "../../assets/images/w12-min.jpeg";
 
 const ImageButton = styled(ButtonBase)(({ theme }) => ({
   position: "relative",
