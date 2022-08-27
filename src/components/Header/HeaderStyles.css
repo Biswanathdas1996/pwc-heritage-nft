@@ -8,6 +8,14 @@
   background-repeat: no-repeat;
 }
 
+.header-wrapper-box {
+
+  /* background-position: top left; */
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .layer {
   background-color: rgb(36 36 36 / 59%);
   background-position: top left;

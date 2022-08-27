@@ -18,7 +18,7 @@ import Grid from "@mui/material/Grid";
 import Blog1 from "../../assets/images/item8.png";
 import Blog2 from "../../assets/images/item4.png";
 import Blog3 from "../../assets/images/item3.png";
-import Blog4 from "../../assets/images/WhatsApp Image 2022-08-25 at 7.56.36 PM.jpeg";
+import Blog4 from "../../assets/images/w12.jpeg";
 
 export default function RecipeReviewCard() {
   const cardUI = (text, img, user, height) => {

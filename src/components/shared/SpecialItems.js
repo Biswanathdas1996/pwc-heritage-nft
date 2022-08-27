@@ -1,35 +1,97 @@
 import * as React from "react";
-import Card from "@mui/material/Card";
-import CardMedia from "@mui/material/CardMedia";
 
+import { styled } from "@mui/material/styles";
+import Box from "@mui/material/Box";
+import ButtonBase from "@mui/material/ButtonBase";
 import Typography from "@mui/material/Typography";
 
 import Grid from "@mui/material/Grid";
-import Blog1 from "../../assets/images/item3.png";
-import Blog2 from "../../assets/images/WhatsApp Image 2022-08-25 at 7.56.29 PM.jpeg";
-import Blog3 from "../../assets/images/WhatsApp Image 2022-08-25 at 7.56.41 PM.jpeg";
-import Blog4 from "../../assets/images/WhatsApp Image 2022-08-25 at 7.56.38 PM.jpeg";
-import Blog5 from "../../assets/images/WhatsApp Image 2022-08-25 at 7.56.37 PM (1).jpeg";
-import Blog6 from "../../assets/images/WhatsApp Image 2022-08-25 at 7.56.34 PM.jpeg";
-import Blog7 from "../../assets/images/WhatsApp Image 2022-08-25 at 7.56.37 PM.jpeg";
-import Blog8 from "../../assets/images/WhatsApp Image 2022-08-25 at 7.56.31 PM.jpeg";
-import Blog9 from "../../assets/images/WhatsApp Image 2022-08-25 at 7.56.39 PM.jpeg";
-import Blog10 from "../../assets/images/WhatsApp Image 2022-08-25 at 7.56.40 PM.jpeg";
-import Blog11 from "../../assets/images/WhatsApp Image 2022-08-25 at 7.56.35 PM.jpeg";
-import Blog12 from "../../assets/images/WhatsApp Image 2022-08-25 at 7.56.36 PM.jpeg";
-import Blog13 from "../../assets/images/WhatsApp Image 2022-08-25 at 7.56.37 PM.jpeg";
+import Blog1 from "../../assets/images/w1.jpeg";
+import Blog2 from "../../assets/images/item3.png";
+import Blog3 from "../../assets/images/w3.jpeg";
+import Blog4 from "../../assets/images/w16.jpeg";
+import Blog5 from "../../assets/images/w4.jpeg";
+import Blog6 from "../../assets/images/w5.jpeg";
+import Blog7 from "../../assets/images/w6.jpeg";
+import Blog8 from "../../assets/images/w7.jpeg";
+import Blog9 from "../../assets/images/w8.jpeg";
+import Blog10 from "../../assets/images/w15.jpeg";
+import Blog11 from "../../assets/images/w10.jpeg";
+import Blog12 from "../../assets/images/w11.jpeg";
+import Blog13 from "../../assets/images/w12.jpeg";
+
+const ImageButton = styled(ButtonBase)(({ theme }) => ({
+  position: "relative",
+  height: 200,
+  [theme.breakpoints.down("sm")]: {
+    width: "100% !important", // Overrides inline-style
+    height: 100,
+  },
+  "&:hover, &.Mui-focusVisible": {
+    zIndex: 1,
+    "& .MuiImageBackdrop-root": {
+      opacity: 0.15,
+    },
+    "& .MuiImageMarked-root": {
+      opacity: 0,
+    },
+    "& .MuiTypography-root": {
+      border: "4px solid currentColor",
+    },
+  },
+}));
+
+const ImageSrc = styled("span")({
+  position: "absolute",
+  left: 0,
+  right: 0,
+  top: 0,
+  bottom: 0,
+  backgroundSize: "cover",
+  backgroundPosition: "center 40%",
+});
+
+const Image = styled("span")(({ theme }) => ({
+  position: "absolute",
+  left: 0,
+  right: 0,
+  top: 0,
+  bottom: 0,
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  color: theme.palette.common.white,
+}));
+
+const ImageBackdrop = styled("span")(({ theme }) => ({
+  position: "absolute",
+  left: 0,
+  right: 0,
+  top: 0,
+  bottom: 0,
+  backgroundColor: theme.palette.common.black,
+  opacity: 0.4,
+  transition: theme.transitions.create("opacity"),
+}));
 
 export default function RecipeReviewCard() {
   const cardUI = (img, height) => {
     return (
-      <Card>
-        <CardMedia
-          component="img"
-          height={height || "200"}
-          image={img}
-          alt="Paella dish"
-        />
-      </Card>
+      <Box
+        sx={{ display: "flex", flexWrap: "wrap", width: "100%" }}
+        onClick={(e) => window.open(img)}
+      >
+        <ImageButton
+          focusRipple
+          style={{
+            width: "100%",
+          }}
+        >
+          <ImageSrc style={{ backgroundImage: `url(${img})` }} />
+          <ImageBackdrop className="MuiImageBackdrop-root" />
+          <Image></Image>
+        </ImageButton>
+      </Box>
     );
   };
 
