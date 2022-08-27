@@ -6,13 +6,14 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
+import CardMedia from "@mui/material/CardMedia";
 
 export default function MultiActionAreaCard() {
   return (
     <Box style={{ marginTop: 50 }}>
       <Grid container spacing={0}>
-        <Grid item xs={12} md={6} sm={12}>
-          <Card style={{ padding: 20, borderRadius: 0, height: 320 }}>
+        <Grid item xs={12} md={4} sm={12}>
+          <Card style={{ padding: 20, borderRadius: 0, height: 420 }}>
             <Typography
               component="h3"
               variant="h7"
@@ -37,12 +38,23 @@ export default function MultiActionAreaCard() {
             </Typography>
           </Card>
         </Grid>
-        <Grid item xs={12} md={6} sm={12} style={{ overflow: "hidden" }}>
-          <video height="321" width="580" controls>
+        <Grid
+          item
+          xs={12}
+          md={8}
+          sm={12}
+          style={{ overflow: "hidden", cursor: "pointer" }}
+        >
+          {/* <video height="321" width="580" controls>
             <source src={videoData} type="video/mp4" />
             <source src={videoData} type="video/ogg" />
             Your browser does not support HTML video.
-          </video>
+          </video> */}
+          <CardMedia
+            component="video"
+            onClick={(e) => window.open(videoData)}
+            image={videoData}
+          />
           {/* <img
             src={videoMp4}
             alt="gg"
