@@ -1,6 +1,7 @@
 import * as React from "react";
 
-import videoMp4 from "../../assets/images/VZqv.gif";
+// import videoMp4 from "../../assets/images/VZqv.gif";
+import videoData from "../../assets/images/video.mp4";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
@@ -37,13 +38,18 @@ export default function MultiActionAreaCard() {
           </Card>
         </Grid>
         <Grid item xs={12} md={6} sm={12} style={{ overflow: "hidden" }}>
-          <img
+          <video height="321" width="580" controls>
+            <source src={videoData} type="video/mp4" />
+            <source src={videoData} type="video/ogg" />
+            Your browser does not support HTML video.
+          </video>
+          {/* <img
             src={videoMp4}
             alt="gg"
             height={325}
             width={580}
             style={{ float: "left" }}
-          />
+          /> */}
         </Grid>
       </Grid>
     </Box>
