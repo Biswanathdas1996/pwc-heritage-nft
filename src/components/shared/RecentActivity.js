@@ -18,7 +18,12 @@ export default function HomePage() {
 
   async function fetchAllPosts() {
     setLoading(true);
-    const getAllToken = await _fetch("getToken");
+    let getAllToken;
+    try {
+      getAllToken = await _fetch("getToken");
+    } catch (err) {
+      setLoading(false);
+    }
     await setToken(getAllToken.slice(Math.max(getAllToken.length - 5, 0)));
     setLoading(false);
   }

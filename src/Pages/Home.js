@@ -30,9 +30,15 @@ export default function HomePage() {
 
   async function fetchAllPosts() {
     setLoading(true);
-    const getAllToken = await _fetch("getToken");
+    let getAllToken;
 
-    await setToken(getAllToken.slice(0, 10));
+    try {
+      getAllToken = await _fetch("getToken");
+    } catch (err) {
+      setLoading(false);
+    }
+
+    if (getAllToken) setToken(getAllToken.slice(0, 10));
     setLoading(false);
   }
 
