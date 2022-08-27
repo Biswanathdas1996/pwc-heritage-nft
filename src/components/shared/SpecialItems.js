@@ -111,44 +111,44 @@ export default function RecipeReviewCard() {
           <br />
         </Grid>
 
-        <Grid item xs={8} sm={8} md={2} lg={2}>
+        <Grid item xs={2} sm={2} md={2} lg={2}>
           {cardUI(Blog1)}
         </Grid>
-        <Grid item xs={8} sm={8} md={2} lg={4}>
+        <Grid item xs={4} sm={4} md={4} lg={4}>
           {cardUI(Blog2)}
         </Grid>
-        <Grid item xs={8} sm={8} md={2} lg={2}>
+        <Grid item xs={2} sm={2} md={2} lg={2}>
           {cardUI(Blog3)}
         </Grid>
-        <Grid item xs={8} sm={8} md={2} lg={4}>
+        <Grid item xs={4} sm={4} md={4} lg={4}>
           {cardUI(Blog4)}
         </Grid>
-        <Grid item xs={8} sm={8} md={2} lg={4}>
+        <Grid item xs={4} sm={4} md={4} lg={4}>
           {cardUI(Blog5)}
         </Grid>
-        <Grid item xs={8} sm={8} md={2} lg={2}>
+        <Grid item xs={2} sm={2} md={2} lg={2}>
           {cardUI(Blog6)}
         </Grid>
-        <Grid item xs={8} sm={8} md={2} lg={4}>
+        <Grid item xs={4} sm={4} md={4} lg={4}>
           {cardUI(Blog7)}
         </Grid>
-        <Grid item xs={8} sm={8} md={2} lg={2}>
+        <Grid item xs={2} sm={2} md={2} lg={2}>
           {cardUI(Blog8)}
         </Grid>
-        <Grid item xs={8} sm={8} md={2} lg={2}>
+        <Grid item xs={2} sm={2} md={2} lg={2}>
           {cardUI(Blog9)}
         </Grid>
-        <Grid item xs={8} sm={8} md={2} lg={2}>
+        <Grid item xs={2} sm={2} md={2} lg={2}>
           {cardUI(Blog10)}
         </Grid>
 
-        <Grid item xs={8} sm={8} md={2} lg={4}>
+        <Grid item xs={4} sm={4} md={4} lg={4}>
           {cardUI(Blog11)}
         </Grid>
-        <Grid item xs={8} sm={8} md={2} lg={2}>
+        <Grid item xs={2} sm={2} md={2} lg={2}>
           {cardUI(Blog12)}
         </Grid>
-        <Grid item xs={8} sm={8} md={2} lg={2}>
+        <Grid item xs={2} sm={2} md={2} lg={2}>
           {cardUI(Blog13)}
         </Grid>
       </Grid>

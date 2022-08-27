@@ -76,7 +76,7 @@ export default function RecipeReviewCard() {
           </Typography>
         </Grid>
 
-        <Grid item xs={8}>
+        <Grid item xs={12} sm={12} md={8} lg={8}>
           {cardUI(
             `This impressive paella is a perfect party dish and a fun meal to
             cook together with your guests. Add 1 cup of frozen peas along with
@@ -84,21 +84,21 @@ export default function RecipeReviewCard() {
             Blog3
           )}
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} sm={12} md={4} lg={4}>
           {cardUI(
             `This impressive paella is a perfect party dish and a fun meal to
             cook together with your guests.`,
             Blog1
           )}
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} sm={12} md={4} lg={4}>
           {cardUI(
             `This impressive paella is a perfect party dish and a fun meal to
             cook together with your guests.`,
             Blog2
           )}
         </Grid>
-        <Grid item xs={8}>
+        <Grid item xs={12} sm={12} md={8} lg={8}>
           {cardUI(
             `This impressive paella is a perfect party dish and a fun meal to
             cook together with your guests. Add 1 cup of frozen peas along with

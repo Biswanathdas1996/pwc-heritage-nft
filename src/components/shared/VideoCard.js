@@ -36,7 +36,7 @@ export default function MultiActionAreaCard() {
             </Typography>
           </Card>
         </Grid>
-        <Grid item xs={12} md={6} sm={12}>
+        <Grid item xs={12} md={6} sm={12} style={{ overflow: "hidden" }}>
           <img
             src={videoMp4}
             alt="gg"

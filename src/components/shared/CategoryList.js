@@ -56,22 +56,22 @@ export default function RecipeReviewCard() {
           <br />
         </Grid>
 
-        <Grid item xs={4}>
+        <Grid item xs={12} sm={12} md={4} lg={4}>
           {cardUI(`Art`, imgx1, `/category/art`)}
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} sm={12} md={4} lg={4}>
           {cardUI(`Instrument`, imgx2, `/category/music`)}
         </Grid>
-        {/* <Grid item xs={4}>
+        {/* <Grid item  xs={12}  sm={12} md={4} lg={4}>
           {cardUI(`Sports`, imgx6, `/category/sports`)}
         </Grid>
-        <Grid item xs={4}>
+        <Grid item  xs={12}  sm={12} md={4} lg={4}>
           {cardUI(`Virtual World`, imgx4, `/category/art`)}
         </Grid>
-        <Grid item xs={4}>
+        <Grid item  xs={12}  sm={12} md={4} lg={4}>
           {cardUI(`Images`, imgx5, `/category/music`)}
         </Grid> */}
-        <Grid item xs={4}>
+        <Grid item xs={12} sm={12} md={4} lg={4}>
           {cardUI(`Collectables`, imgx3, `/category/sports`)}
         </Grid>
       </Grid>

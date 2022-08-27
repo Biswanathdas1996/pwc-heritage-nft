@@ -9,7 +9,7 @@ import Card from "@mui/material/Card";
 export default function MultiActionAreaCard() {
   return (
     <Grid container spacing={0} style={{ marginBottom: 50 }}>
-      <Grid item xs={12} md={6} sm={12}>
+      <Grid item xs={12} md={6} sm={12} style={{ overflow: "hidden" }}>
         <img
           src={ImgGif}
           alt="gg"
