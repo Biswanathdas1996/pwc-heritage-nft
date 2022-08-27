@@ -39,6 +39,12 @@ export default function HomePage() {
   return (
     <>
       <TopBanner></TopBanner>
+      <Container style={{ marginTop: 40 }}>
+        <About />
+      </Container>
+      <Container maxWidth>
+        <SpecialItems />
+      </Container>
       <Container>
         <Box
           sx={{
@@ -46,8 +52,6 @@ export default function HomePage() {
             pb: 2,
           }}
         >
-          <About />
-          <SpecialItems />
           <VideoCard />
 
           <CategoryList />
