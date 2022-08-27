@@ -21,6 +21,8 @@ import {
   createAnduploadFileToIpfs,
 } from "../utils/uploadFileToIpfs";
 
+import { category } from "../helpers/categories";
+
 const web3 = new Web3(window.ethereum);
 
 // const VendorSchema = Yup.object().shape({
@@ -243,9 +245,11 @@ const Mint = () => {
                                       style={{ marginRight: 10, padding: 9 }}
                                     >
                                       <option>-- Please select --</option>
-                                      <option value="art">Art</option>
-                                      <option value="music">Music</option>
-                                      <option value="sports">Sports</option>
+                                      {category.map((data) => (
+                                        <option value={data?.value}>
+                                          {data?.title}
+                                        </option>
+                                      ))}
                                     </Field>
                                   </div>
                                 </Grid>

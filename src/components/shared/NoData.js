@@ -3,7 +3,7 @@ import { Typography, Stack } from "@mui/material";
 import { TabPanel } from "@mui/lab";
 import SpeakerNotesOffIcon from "@mui/icons-material/SpeakerNotesOff";
 
-const Bid = ({ text }) => {
+const Nodata = ({ text = "No data" }) => {
   return (
     <TabPanel
       value="3"
@@ -35,4 +35,4 @@ const Bid = ({ text }) => {
   );
 };
 
-export default Bid;
+export default Nodata;

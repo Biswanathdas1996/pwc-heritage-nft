@@ -4,36 +4,8 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
-import imgx1 from "../../assets/images/images.jpg";
-import imgx2 from "../../assets/images/typewriter.jpeg";
-// import imgx3 from "../../assets/images/heritage-02-00007-g001-550.png";
-// import imgx4 from "../../assets/images/imgx4.png";
-import imgx5 from "../../assets/images/w9.jpeg";
-import imgx6 from "../../assets/images/item3.png";
 import { useNavigate } from "react-router-dom";
-
-const category = [
-  {
-    title: "Art",
-    img: imgx1,
-    link: "/category/art",
-  },
-  {
-    title: "Instrument",
-    img: imgx2,
-    link: "/category/music",
-  },
-  {
-    title: "Sports",
-    img: imgx6,
-    link: "/category/sports",
-  },
-  {
-    title: "Collectables",
-    img: imgx5,
-    link: "/category/art",
-  },
-];
+import { category } from "../../helpers/categories";
 
 export default function RecipeReviewCard() {
   let history = useNavigate();
